@@ -11,7 +11,7 @@ struct node
 
 	friend ostream & operator<<(ostream & out, const node & o)
 	{
-		return out<<”wklad = “<<o.wklad<<”,odpowiedz = “<<o.odpowiedz;
+		return out<<"wklad = "<<o.wklad<<",odpowiedz = "<<o.odpowiedz;
 	}
 };
 
@@ -56,7 +56,7 @@ void insert(int a,int b, int v)
 		if(va % 2)
 		{
             tab[va-1].wklad += v;
-			update(av-1);   //Zaktualizuj brata 
+			update(va-1);   //Zaktualizuj brata 
             update(2*va);   //Zaktualizuj ojca ( bo brat się zmienił ) 
 		}
         //Jeżeli wchodzimy do ojca od prawej stronny
