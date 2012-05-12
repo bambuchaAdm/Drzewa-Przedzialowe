@@ -4,26 +4,20 @@
 
 typedef unsigned long long ull;
 
-template <
-    typename num_type,
-    typename insertFunctor,
-    typename queryFunctor>
-struct Node
+template <typename num_type>
+struct PlusMaxNode
 {
-    static insertFunctor insertOperatiron;
-    static queryFunctor queryOperation;
-
     num_type result;
     num_type base;
-    
-    void update(const Node & left, const Node & right)
+
+    void update(const PlusMaxNode & left, const PlusMaxNode & right)
     {
-	result = base + left.result + right.result;
+	result = base +  left.result + right.result;
     }
     
     void insert(num_type value)
     {
-	base = insertOperatiron(base,value);
+	base += value;
 	result += value;
     }
     
@@ -32,6 +26,31 @@ struct Node
 	return std::max(this->result,result);
     }
 };
+
+template <typename num_type>
+struct PlusPlusNode
+{
+    num_type result;
+    num_type base;
+
+    void update(const PlusPlusNode & left, const PlusPlusNode & right)
+    {
+	result = base +  left.result + right.result;
+    }
+    
+    void insert(num_type value)
+    {
+	base += value;
+	result += value;
+    }
+    
+    int query(num_type result)
+    {
+	return std::max(this->result,result);
+    }
+};
+
+
 
 template<
     typename node_type,
@@ -189,3 +208,10 @@ struct Tree
 	return result;
     }
 };
+
+
+
+int main()
+{
+    Tree<PlusMaxNode<int>,5> tree;
+}
