@@ -209,9 +209,3 @@ struct Tree
     }
 };
 
-
-
-int main()
-{
-    Tree<PlusMaxNode<int>,5> tree;
-}
