@@ -1,0 +1,28 @@
+* Implementacja drzew przedziałowych w C++
+
+** Obsługiwane backendy (operacje jakie można wykonywać)
+
+*** PlusMax 
+    (Dodawanie podczas wstawiania, odpowiada maksymalną wartością)
+
+* Zależności
+  Kompilator języka C++
+  + Kompilator C++ (gcc,llvm,msvc)
+  + Git
+  + Subversion (Dla google-test)
+* TO BE DONE
+** TODO Stworzyć nagłówki
+** TODO Dodać niskopoziomowe API do węzła
+** TODO Wyczyścić kod Iteratora po drzewie
+** TODO Napisać testy, bo jest kilka błędów, które widziałem, ale ich nie poprawiełm
+** TODO Znacząco zwiększyć pokrycie kodu testami.
+** TODO Poprawić typ wartości zwracanej w PlusMax::query
+** TODO Dodać specyficzną implementację drzewa do parametru SetPlsu SetMax
+   Opartą o bit aktualności i przechodzenia requerencyjne 
+** TODO Dodatkowe backendy
+   + PlusPlus
+     Dodaje wartość do każdego węzła w przedziala, zwraca sumę wartości
+   + MaxPlus
+     Ustawia wartość maksymalną na przedziale, zwraca sumę z przedziału
+   + MaxMax 
+     Ustawia maksymalną wartość na przedziale, zwraca maksymalną wartość na przedziale 

@@ -27,31 +27,6 @@ struct PlusMaxNode
     }
 };
 
-template <typename num_type>
-struct PlusPlusNode
-{
-    num_type result;
-    num_type base;
-
-    void update(const PlusPlusNode & left, const PlusPlusNode & right)
-    {
-	result = base +  left.result + right.result;
-    }
-    
-    void insert(num_type value)
-    {
-	base += value;
-	result += value;
-    }
-    
-    int query(num_type result)
-    {
-	return std::max(this->result,result);
-    }
-};
-
-
-
 template<
     typename node_type,
     ull K,
