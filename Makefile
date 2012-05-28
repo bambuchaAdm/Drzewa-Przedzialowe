@@ -45,10 +45,10 @@ gtest_main.o : $(GTEST_DIR)
 libgtest_main.a : gtest-all.o gtest_main.o
 	$(AR) $(ARFLAGS) $@ $^
 
-tree.o : $(SRC) $(HEADER)
+tree.o : $(SRC)
 	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $^
 
-tree-test.o : $(HEADER) $(TEST_SRC)
+tree-test.o : $(TEST_SRC)
 	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $^
 
 tree-test : $(OBJECT) $(TEST_OBJECTS) $(GTEST)
