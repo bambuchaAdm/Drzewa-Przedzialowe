@@ -8,7 +8,7 @@ GTEST_HEADERS = $(GTEST_DIR)/include/gtest/*.h \
 HEADER = tree.hpp
 SRC = tree.cpp
 
-CPPFLAGS += -Iinclude
+CPPFLAGS += -I$(GTEST_DIR)/include
 
 CXXFLAGS += -g -Wall -Wextra
 
