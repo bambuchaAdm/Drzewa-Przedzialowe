@@ -6,7 +6,6 @@
     (Dodawanie podczas wstawiania, odpowiada maksymalną wartością)
 
 * Zależności
-  Kompilator języka C++
   + Kompilator C++ (gcc,llvm,msvc)
   + Git
   + Subversion (Dla google-test)
