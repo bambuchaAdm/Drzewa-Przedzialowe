@@ -1,5 +1,5 @@
 
-GTEST_DIR = googletest-read-only
+GTEST_DIR = gtest
 
 TESTS = tree-test
 GTEST_HEADERS = $(GTEST_DIR)/include/gtest/*.h \
@@ -28,12 +28,17 @@ all : $(TESTS) run
 clean :
 	rm -f $(TESTS) *.a *.o
 
-GTEST_SRCS_ = $(GTEST_DIR)/src/*.cc $(GTEST_DIR)/src/*.h $(GTEST_HEADERS)
-gtest-all.o : $(GTEST_SRCS_)
+$(GTEST_DIR) : 
+	svn checkout \
+	 http://googletest.googlecode.com/svn/trunk/\
+	 $(GTEST_DIR)
+
+
+gtest-all.o : $(GTEST_DIR) 
 	$(CXX) $(CPPFLAGS) -I$(GTEST_DIR) $(CXXFLAGS) -c \
             $(GTEST_DIR)/src/gtest-all.cc
 
-gtest_main.o : $(GTEST_SRCS_)
+gtest_main.o : $(GTEST_DIR)
 	$(CXX) $(CPPFLAGS) -I$(GTEST_DIR) $(CXXFLAGS) -c \
             $(GTEST_DIR)/src/gtest_main.cc
 
